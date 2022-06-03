@@ -12,22 +12,18 @@ const initialState = {
     'Item3',
     'Item4',
     'Item5',
-    'Item6',
-    'Item7',
-    'Item8',
-    'Item9',
   ],
 } as TypeList;
 
 const { actions, reducer } = createSlice({
-  name: 'indevido',
+  name: 'ADICIONAR_ITEM',
   initialState,
   reducers: {
-    limpaIndevidamente(state, actions: PayloadAction) {
-      state.list = [...state.list, 'Banana'];
+    addItem(state, action: PayloadAction<string>) {
+      state.list.push(action.payload);
     },
   },
 });
 export const selectList = (state: TypeList) => state.list;
-export const { limpaIndevidamente } = actions;
+export const { addItem } = actions;
 export default reducer;
