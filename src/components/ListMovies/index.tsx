@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectList } from '../../store/MovieCategories/redocer';
+import { selectList } from '../../store/ListaAleatoria/redocer';
 
 // interface ListMoviesProps {
 //   categories: Object[];

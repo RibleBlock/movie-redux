@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
-import reducer from './MovieCategories/redocer';
+import reducer from './ListaAleatoria/redocer';
 
 // const reducersToPersist = combineReducers({
 //   list: nomeIndevido,
