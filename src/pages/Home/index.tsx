@@ -1,7 +1,10 @@
+import { ListMovies, Player } from '../../components';
+
 export function Home() {
-  return(
+  return (
     <section>
-      section
+      <Player />
+      <ListMovies />
     </section>
   );
 }

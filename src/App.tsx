@@ -1,12 +1,13 @@
-import { Home } from './pages'
+import { Provider } from 'react-redux';
+import { Home } from './pages';
+import store from './store';
 
 function App() {
-
   return (
-    <div>
+    <Provider store={store}>
       <Home />
-    </div>
-  )
+    </Provider>
+  );
 }
 
-export default App
+export default App;
