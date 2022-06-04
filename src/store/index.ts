@@ -1,13 +1,15 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
-import reducer from './ListaAleatoria/redocer';
+import listReducer from './ListaAleatoria/redocer';
+import usersReducer from './Users/reducer';
 
-// const reducersToPersist = combineReducers({
-//   list: nomeIndevido,
+// const redocer = combineReducers({
+//   listReducer,
+//   usersReducer,
 // });
 
 const store = configureStore({
-  reducer,
+  reducer: listReducer, // usersReducer
 });
 
 export default store;
