@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem, selectList } from '../../store/ListaAleatoria/redocer';
+import { addItem, selectList } from '../../store/ListaAleatoria/reducer';
 
 export function PlayerFilho() {
   const lista = useSelector(selectList);

@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { selectList } from '../../store/ListaAleatoria/redocer';
+import { selectList } from '../../store/ListaAleatoria/reducer';
 
 export function RandomList() {
   const listaAleatoria = useSelector(selectList);

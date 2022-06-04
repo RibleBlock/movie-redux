@@ -15,7 +15,7 @@ const initialState = {
   ],
 } as TypeList;
 
-const { actions, reducer } = createSlice({
+const reducer = createSlice({
   name: 'ADICIONAR_ITEM',
   initialState,
   reducers: {
@@ -25,5 +25,5 @@ const { actions, reducer } = createSlice({
   },
 });
 export const selectList = (state: TypeList) => state.list;
-export const { addItem } = actions;
-export default reducer;
+export const { addItem } = reducer.actions;
+export default reducer.reducer;
