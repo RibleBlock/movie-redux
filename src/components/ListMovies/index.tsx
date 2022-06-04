@@ -9,7 +9,7 @@ export function ListMovies() {
 
   return (
     <aside>
-      { listaAleatoria.map((item) => (
+      { listaAleatoria?.map((item) => (
         <div key={item}>
           <h3>{ item }</h3>
         </div>
