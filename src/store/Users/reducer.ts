@@ -4,7 +4,7 @@ export type User = {
   id: number;
   name: string;
 }
-type TypeUsers = {
+export type TypeUsers = {
   selectedUser: User | null;
   users: User[];
 }

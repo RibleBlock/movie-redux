@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import { ListMovies, Player } from '../../components';
+import { RandomList } from '../../components';
 
 export function Home() {
   return (
     <section>
-      <ListMovies />
+      <RandomList />
       <Link to="/sobre">
         Vá para a Página Sobre
       </Link>

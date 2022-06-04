@@ -1,10 +1,7 @@
 import { useSelector } from 'react-redux';
 import { selectList } from '../../store/ListaAleatoria/redocer';
 
-// interface ListMoviesProps {
-//   categories: Object[];
-// }
-export function ListMovies() {
+export function RandomList() {
   const listaAleatoria = useSelector(selectList);
 
   return (
