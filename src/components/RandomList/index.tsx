@@ -1,16 +1,22 @@
 import { useSelector } from 'react-redux';
-import { selectList } from '../../store/ListaAleatoria/reducer';
+import { Link } from 'react-router-dom';
+import { State } from '../../store';
+import { selectList, TypeList } from '../../store/ListaAleatoria/reducer';
 
 export function RandomList() {
-  const listaAleatoria = useSelector(selectList);
+  const listaAleatoria = useSelector((state: State) => state.list);
+  console.log(listaAleatoria);
 
   return (
     <aside>
-      { listaAleatoria?.map((item) => (
-        <div key={item}>
-          <h3>{ item }</h3>
-        </div>
-      )) }
+      <ul>
+        { listaAleatoria?.list.map((value) => (
+          <li>{ value }</li>
+        )) }
+      </ul>
+      <Link to="/users">
+        USERS :D
+      </Link>
     </aside>
   );
 }

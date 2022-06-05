@@ -2,20 +2,15 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
 import listReducer, { TypeList } from './ListaAleatoria/reducer';
 import usersReducer, { TypeUsers } from './Users/reducer';
-/*
-interface AppState {
+
+export interface State {
   list: TypeList;
   users: TypeUsers;
 }
 
-const reducer = combineReducers<AppState>({
+const reducer = combineReducers<State>({
   list: listReducer,
   users: usersReducer,
-});
-*/
-const reducer = combineReducers({
-  listReducer,
-  usersReducer,
 });
 
 const store = configureStore({ reducer });

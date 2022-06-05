@@ -1,18 +1,28 @@
 import { useSelector } from 'react-redux';
-import { showUsers } from '../../store/Users/reducer';
+import { State } from '../../store';
 
 export function Users() {
-  const { selectedUser, users } = useSelector(showUsers);
+  const selected = useSelector((state: State) => state.users.selectedUser);
+  const users = useSelector((state: State) => state.users.users);
 
   return (
     <>
       <h1>usuarios</h1>
-      <h1>{ selectedUser?.name }</h1>
+      <h1>{ selected?.name }</h1>
       <ol>
         { users?.map((v) => (
           <li>
-            {v.id}
-            {v.name}
+            <p>
+              ID:
+              {' '}
+              { v.id }
+            </p>
+            <p>
+              {' '}
+              NOME:
+              {' '}
+              { v.name }
+            </p>
           </li>
         )) }
       </ol>

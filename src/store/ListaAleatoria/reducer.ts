@@ -16,7 +16,7 @@ const initialState = {
 } as TypeList;
 
 const reducer = createSlice({
-  name: 'ADICIONAR_ITEM',
+  name: 'randomList',
   initialState,
   reducers: {
     addItem(state, action: PayloadAction<string>) {

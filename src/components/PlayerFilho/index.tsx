@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { State } from '../../store';
 import { addItem, selectList } from '../../store/ListaAleatoria/reducer';
 
 export function PlayerFilho() {
-  const lista = useSelector(selectList);
+  const lista = useSelector((state: State) => state.list.list);
   const dispatch = useDispatch();
 
   const [inputText, setInputText] = useState<string>('');
