@@ -10,18 +10,18 @@ export function Users() {
       <h1>usuarios</h1>
       <h1>{ selected?.name }</h1>
       <ol>
-        { users?.map((v) => (
-          <li>
+        { users?.map(({ id, name }) => (
+          <li key={id}>
             <p>
               ID:
               {' '}
-              { v.id }
+              { id }
             </p>
             <p>
               {' '}
               NOME:
               {' '}
-              { v.name }
+              { name }
             </p>
           </li>
         )) }
