@@ -4,7 +4,7 @@ import { State } from '../../store';
 import { addItem } from '../../store/ListaAleatoria/reducer';
 
 export function PlayerFilho() {
-  const lista = useSelector((state: State) => state.list.list);
+  const { list } = useSelector((state: State) => state.list);
   const dispatch = useDispatch();
 
   const [inputText, setInputText] = useState<string>('');
@@ -25,7 +25,7 @@ export function PlayerFilho() {
         Adicionar item
       </button>
       <ol style={{ backgroundColor: '#10101055', fontSize: 16 }}>
-        { lista?.map((item) => (
+        { list?.map((item) => (
           <li>
             { item }
           </li>

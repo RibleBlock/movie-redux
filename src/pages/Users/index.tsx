@@ -5,8 +5,7 @@ import { selectUser } from '../../store/Users/reducer';
 import { Box } from './Users.styles';
 
 export function Users() {
-  const selected = useSelector((state: State) => state.users.selectedUser);
-  const users = useSelector((state: State) => state.users.users);
+  const { selectedUser, users } = useSelector((state: State) => state.users);
   const dispatch = useDispatch();
 
   return (
@@ -16,15 +15,15 @@ export function Users() {
       </Link>
       <h1>usuarios</h1>
 
-      { selected && (
+      { selectedUser && (
       <header>
         <p>
           ID:
-          { ` ${selected?.id}` }
+          { ` ${selectedUser?.id}` }
         </p>
         <p>
           NOME:
-          { ` ${selected?.name}` }
+          { ` ${selectedUser?.name}` }
         </p>
       </header>
       ) }
