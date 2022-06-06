@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { State } from '../../store';
+import { Box } from './Users.styles';
 
 export function Users() {
   const selected = useSelector((state: State) => state.users.selectedUser);
@@ -12,17 +13,19 @@ export function Users() {
       <ol>
         { users?.map(({ id, name }) => (
           <li key={id}>
-            <p>
-              ID:
-              {' '}
-              { id }
-            </p>
-            <p>
-              {' '}
-              NOME:
-              {' '}
-              { name }
-            </p>
+            <Box>
+              <p>
+                ID:
+                {' '}
+                { id }
+              </p>
+              <p>
+                {' '}
+                NOME:
+                {' '}
+                { name }
+              </p>
+            </Box>
           </li>
         )) }
       </ol>

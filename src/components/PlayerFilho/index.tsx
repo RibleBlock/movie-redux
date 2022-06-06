@@ -24,7 +24,7 @@ export function PlayerFilho() {
       >
         Adicionar item
       </button>
-      <ol style={{ backgroundColor: '#ffdddd', fontSize: 16 }}>
+      <ol style={{ backgroundColor: '#10101055', fontSize: 16 }}>
         { lista?.map((item) => (
           <li>
             { item }
