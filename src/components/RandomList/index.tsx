@@ -12,9 +12,6 @@ export function RandomList() {
           <li>{ value }</li>
         )) }
       </ul>
-      <Link to="/users">
-        USERS :D
-      </Link>
     </aside>
   );
 }
