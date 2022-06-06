@@ -21,6 +21,14 @@ const initialState = {
       id: 2,
       name: 'Pietro',
     },
+    {
+      id: 3,
+      name: 'Victor',
+    },
+    {
+      id: 4,
+      name: 'George',
+    },
   ],
 } as TypeUsers;
 
