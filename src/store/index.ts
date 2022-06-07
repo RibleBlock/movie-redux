@@ -1,16 +1,16 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
-import listReducer, { TypeList } from './ListaAleatoria/reducer';
-import usersReducer, { TypeUsers } from './Users/reducer';
+import listState, { TypeList } from './ListaAleatoria/reducer';
+import usersState, { TypeUsers } from './Users/reducer';
 
 export interface State {
-  list: TypeList;
-  users: TypeUsers;
+  listState: TypeList;
+  usersState: TypeUsers;
 }
 
-const reducer = combineReducers<State>({
-  list: listReducer,
-  users: usersReducer,
+const reducer = combineReducers({
+  listState,
+  usersState,
 });
 
 const store = configureStore({ reducer });

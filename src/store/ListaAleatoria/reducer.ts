@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { State } from '..';
 
 export interface TypeList {
   list: string[];
@@ -24,6 +25,6 @@ const reducer = createSlice({
     },
   },
 });
-export const selectList = (state: TypeList) => state.list;
+export const selectList = (state: State) => state.listState.list;
 export const { addItem } = reducer.actions;
 export default reducer.reducer;

@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { State } from '../../store';
-import { addItem } from '../../store/ListaAleatoria/reducer';
+import { addItem, selectList } from '../../store/ListaAleatoria/reducer';
 
 export function PlayerFilho() {
-  const { list } = useSelector((state: State) => state.list);
+  const list = useSelector(selectList);
   const dispatch = useDispatch();
 
   const [inputText, setInputText] = useState<string>('');
@@ -26,7 +25,7 @@ export function PlayerFilho() {
       </button>
       <ol style={{ backgroundColor: '#10101055', fontSize: 16 }}>
         { list?.map((item) => (
-          <li>
+          <li key={item}>
             { item }
           </li>
         )) }

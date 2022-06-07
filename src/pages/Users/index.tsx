@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { State } from '../../store';
-import { selectUser } from '../../store/Users/reducer';
+// import { State } from '../../store';
+import { changeUserSelected, selectUsers, selectUserSelected } from '../../store/Users/reducer';
 import { Box } from './Users.styles';
 
 export function Users() {
-  const { selectedUser, users } = useSelector((state: State) => state.users);
+  const users = useSelector(selectUsers);
+  const selectedUser = useSelector(selectUserSelected);
   const dispatch = useDispatch();
 
   return (
@@ -40,7 +41,7 @@ export function Users() {
 
               <button
                 type="button"
-                onClick={() => dispatch(selectUser({ id, name }))}
+                onClick={() => dispatch(changeUserSelected({ id, name }))}
               >
                 Select
               </button>

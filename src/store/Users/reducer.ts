@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { State } from '..';
 
 export type User = {
   id: number;
@@ -36,11 +37,13 @@ const { actions, reducer } = createSlice({
   name: 'USER',
   initialState,
   reducers: {
-    selectUser(state, action: PayloadAction<User>) {
+    changeUserSelected(state, action: PayloadAction<User>) {
       state.selectedUser = { ...action.payload };
     },
   },
 });
 
-export const { selectUser } = actions;
+export const selectUsers = (state: State) => state.usersState.users;
+export const selectUserSelected = (state: State) => state.usersState.selectedUser;
+export const { changeUserSelected } = actions;
 export default reducer;

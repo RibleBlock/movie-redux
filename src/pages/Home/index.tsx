@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RandomList } from '../../components';
-import { State } from '../../store';
+import { selectUserSelected } from '../../store/Users/reducer';
 import { Section } from './Home.styles';
 
 export function Home() {
-  const user = useSelector((state: State) => state.users.selectedUser);
+  const user = useSelector(selectUserSelected);
 
   return (
     <>
