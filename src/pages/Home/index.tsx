@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { RandomList } from '../../components';
 import { selectUserSelected } from '../../store/Users/reducer';
 import { Section } from './Home.styles';
 
@@ -24,16 +23,16 @@ export function Home() {
       ) }
 
       <section>
-        <Section>
+        {/* <Section>
           <RandomList />
         </Section>
 
         <Link to="/sobre">
           Vá para a Página Sobre
-        </Link>
+        </Link> */}
         <br />
         <Link to="/user">
-          Vá para a Página User
+          Selecionar um USUÁRIO
         </Link>
       </section>
     </>

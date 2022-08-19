@@ -43,7 +43,7 @@ const { actions, reducer } = createSlice({
   },
 });
 
-export const selectUsers = (state: State) => state.usersState.users;
-export const selectUserSelected = (state: State) => state.usersState.selectedUser;
+export const selectUsers = (state: State) => state.reducer.users.users;
+export const selectUserSelected = (state: State) => state.reducer.users.selectedUser;
 export const { changeUserSelected } = actions;
 export default reducer;

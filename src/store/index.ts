@@ -1,18 +1,46 @@
+/* Com apenas esses ja é possivel usar o redux */
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
+
+// Para armazenar localmente
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 import listState, { TypeList } from './ListaAleatoria/reducer';
 import usersState, { TypeUsers } from './Users/reducer';
 
+// Tipagem do combineReducers
 export interface State {
-  listState: TypeList;
-  usersState: TypeUsers;
+  reducer: {
+    listState: TypeList;
+    users: TypeUsers;
+  }
 }
 
-const reducer = combineReducers({
-  listState,
-  usersState,
+// ?
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+// Juntando os reducers
+const reducersToPersist = combineReducers({
+  users: usersState,
 });
 
-const store = configureStore({ reducer });
+// ?
+const persistedReducer = persistReducer(persistConfig, reducersToPersist);
 
-export default store;
+// UM objeto que vai dentro do cofigureStore
+const reducer = {
+  reducer: persistedReducer,
+  lista: listState,
+};
+
+// Redux normal ??
+const store = configureStore({
+  reducer,
+});
+// ????
+const persistor = persistStore(store);
+
+export { store, persistor };

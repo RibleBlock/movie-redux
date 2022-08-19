@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-// import { State } from '../../store';
+import { State } from '../../store';
 import { changeUserSelected, selectUsers, selectUserSelected } from '../../store/Users/reducer';
 import { Box } from './Users.styles';
 
@@ -9,6 +9,7 @@ export function Users() {
   const selectedUser = useSelector(selectUserSelected);
   const dispatch = useDispatch();
 
+  console.log(users);
   return (
     <>
       <Link to="..">
@@ -55,6 +56,7 @@ export function Users() {
           </li>
         )) }
       </ol>
+
     </>
   );
 }

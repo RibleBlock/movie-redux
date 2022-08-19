@@ -3,7 +3,7 @@ import {
   Routes as Switch,
   Route,
 } from 'react-router-dom';
-import { Home, Sobre, Users } from './pages';
+import { Home, Users } from './pages';
 
 export function Routes() {
   return (
@@ -11,7 +11,6 @@ export function Routes() {
       <Switch>
         <Route path="/" element={<Home />} />
         <Route path="/user" element={<Users />} />
-        <Route path="/sobre" element={<Sobre />} />
       </Switch>
     </Router>
   );
