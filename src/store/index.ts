@@ -5,13 +5,12 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import listState, { TypeList } from './ListaAleatoria/reducer';
 import usersState, { TypeUsers } from './Users/reducer';
 
 // Tipagem do combineReducers
 export interface State {
   reducer: {
-    listState: TypeList;
+    // listState: TypeList;
     users: TypeUsers;
   }
 }
@@ -33,12 +32,17 @@ const persistedReducer = persistReducer(persistConfig, reducersToPersist);
 // UM objeto que vai dentro do cofigureStore
 const reducer = {
   reducer: persistedReducer,
-  lista: listState,
+  // aqui vai os reducers que nao vao persistir
+  // lista: listState,
 };
 
 // Redux normal ??
 const store = configureStore({
   reducer,
+  // sem o middleware pode dar esse erro => A non-serializable value was detected in an action.
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
 // ????
 const persistor = persistStore(store);

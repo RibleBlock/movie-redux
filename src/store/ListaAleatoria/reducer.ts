@@ -25,6 +25,6 @@ const reducer = createSlice({
     },
   },
 });
-export const selectList = (state: State) => state.listState.list;
+// export const selectList = (state: State) => state.listState.list;
 export const { addItem } = reducer.actions;
 export default reducer.reducer;

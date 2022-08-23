@@ -23,14 +23,6 @@ export function Home() {
       ) }
 
       <section>
-        {/* <Section>
-          <RandomList />
-        </Section>
-
-        <Link to="/sobre">
-          Vá para a Página Sobre
-        </Link> */}
-        <br />
         <Link to="/user">
           Selecionar um USUÁRIO
         </Link>
